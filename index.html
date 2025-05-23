@@ -8,9 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- <img src="profile-image.jpg" alt="Mason's Profile Picture" class="profile-image"> -->
-        <h1>Mason</h1>
-        <p>Welcome to my profile</p>
+        <h1>Mason here</h1>
         
         <div class="skills">
             <span class="skill-tag">AI Development</span>
@@ -50,12 +48,12 @@
                 </ol>
             </div>
 
-            <div class="links" id="project-links">
+            <div class="links hidden" id="project-links">
                 <a href="https://client.masonhere.com" target="_blank" rel="noopener">Talking Room</a>
                 <a href="https://dashboard.masonhere.com" target="_blank" rel="noopener">Dashboard</a>
             </div>
 
-            <div id="server-down-message" class="hidden server-down-container">
+            <div id="server-down-message" class="server-down-container">
                 <p>The Talking Room server is temporarily offline to conserve resources. If you'd like to try the demo, please send me a message, and I'll gladly activate it for you.</p>
                 <a href="https://www.linkedin.com/in/mason-khosroabadi-606a8358/" target="_blank" rel="noopener" class="linkedin-button">My LinkedIn</a>
             </div>
@@ -95,15 +93,18 @@
             const clientUrl = 'https://client.masonhere.com';
 
             try {
-                const response = await fetch(clientUrl, { method: 'HEAD', mode: 'no-cors', cache: 'no-cache' });
-                // We can't reliably check status with no-cors, but if fetch itself doesn't throw an error,
-                // it often means the server is at least reachable at a network level.
-                // For a more robust check, the server would need to support CORS or have a dedicated status endpoint.
-                // Assuming reachable if no network error.
+                // Attempt to fetch, but with a timeout mechanism
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+
+                const response = await fetch(clientUrl, { method: 'HEAD', mode: 'no-cors', cache: 'no-cache', signal: controller.signal });
+                clearTimeout(timeoutId);
+
+                // Server is up
                 projectLinksDiv.classList.remove('hidden');
                 serverDownMessageDiv.classList.add('hidden');
             } catch (error) {
-                // Likely a network error, meaning the server is down or unreachable
+                // Server is down or request timed out
                 projectLinksDiv.classList.add('hidden');
                 serverDownMessageDiv.classList.remove('hidden');
             }
