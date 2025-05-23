@@ -4,138 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mason's Profile</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7f9;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 30px 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            max-width: 700px;
-            margin: 20px;
-        }
-        h1 {
-            color: #2c3e50;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            color: #555;
-        }
-        .links a {
-            display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 12px 25px;
-            margin: 10px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-        }
-        .links a:hover {
-            background-color: #2980b9;
-        }
-        .instructions {
-            margin-top: 30px;
-            text-align: left;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-left: 4px solid #3498db;
-            border-radius: 5px;
-        }
-        .instructions h2 {
-            color: #3498db;
-            font-size: 1.5em;
-            margin-top: 0;
-        }
-        .instructions p {
-            font-size: 1em;
-            color: #444;
-        }
-        .footer-note {
-            margin-top: 25px;
-            font-size: 0.9em;
-            color: #777;
-        }
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 20px;
-            border: 3px solid #3498db;
-        }
-        .project-section {
-            margin-top: 30px;
-            text-align: left;
-        }
-        .project-box {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid #3498db;
-        }
-        .contact-section {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #f0f8ff;
-            border-radius: 8px;
-        }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .contact-form input, .contact-form textarea {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .contact-form button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .contact-form button:hover {
-            background-color: #2980b9;
-        }
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0;
-        }
-        .skill-tag {
-            background-color: #e1f0fa;
-            color: #3498db;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
@@ -146,9 +15,9 @@
         <div class="skills">
             <span class="skill-tag">AI Development</span>
             <span class="skill-tag">Machine Learning</span>
-            <span class="skill-tag">Web Development</span>
-            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">Data Science</span>
             <span class="skill-tag">Healthcare Technology</span>
+            <span class="skill-tag">Science</span>
         </div>
 
         <div class="project-section">
@@ -181,12 +50,15 @@
                 </ol>
             </div>
 
-            <div class="links">
-                <a href="https://client.localhost" target="_blank" rel="noopener">Try Talking Room</a>
+            <div class="links" id="project-links">
+                <a href="https://client.masonhere.com" target="_blank" rel="noopener">Talking Room</a>
+                <a href="https://dashboard.masonhere.com" target="_blank" rel="noopener">Dashboard</a>
             </div>
-             <p class="footer-note">
-                (You can also use <code>client.masonhere.com</code> if configured with HTTPS)
-            </p>
+
+            <div id="server-down-message" class="hidden server-down-container">
+                <p>The Talking Room server is temporarily offline to conserve resources. If you'd like to try the demo, please send me a message, and I'll gladly activate it for you.</p>
+                <a href="https://www.linkedin.com/in/mason-khosroabadi-606a8358/" target="_blank" rel="noopener" class="linkedin-button">My LinkedIn</a>
+            </div>
 
             <div class="instructions">
                 <h2>How to Use:</h2>
@@ -207,19 +79,36 @@
         <div class="contact-section">
             <h2>Have Ideas to Improve This Project?</h2>
             <p>I'm actively looking for feedback, collaboration opportunities, and innovative ideas to enhance Talking Room.</p>
-            <p>If you have suggestions, technical insights, or would like to contribute in any way, please reach out:</p>
+            <p>If you have suggestions, technical insights, or would like to contribute in any way, please reach out for a chat on LinkedIn:</p>
             
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea rows="5" placeholder="Your ideas or feedback on the Talking Room project"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            <a href="https://www.linkedin.com/in/mason-khosroabadi-606a8358/" target="_blank" rel="noopener" class="linkedin-button">Chat on LinkedIn</a>
         </div>
         
         <p class="footer-note">
-            &copy; 2025 Mason. All rights reserved.
+            &copy; 2025 Mason is still here 😜.
         </p>
     </div>
+    <script>
+        async function checkServerStatus() {
+            const projectLinksDiv = document.getElementById('project-links');
+            const serverDownMessageDiv = document.getElementById('server-down-message');
+            const clientUrl = 'https://client.masonhere.com';
+
+            try {
+                const response = await fetch(clientUrl, { method: 'HEAD', mode: 'no-cors', cache: 'no-cache' });
+                // We can't reliably check status with no-cors, but if fetch itself doesn't throw an error,
+                // it often means the server is at least reachable at a network level.
+                // For a more robust check, the server would need to support CORS or have a dedicated status endpoint.
+                // Assuming reachable if no network error.
+                projectLinksDiv.classList.remove('hidden');
+                serverDownMessageDiv.classList.add('hidden');
+            } catch (error) {
+                // Likely a network error, meaning the server is down or unreachable
+                projectLinksDiv.classList.add('hidden');
+                serverDownMessageDiv.classList.remove('hidden');
+            }
+        }
+        checkServerStatus();
+    </script>
 </body>
 </html>
