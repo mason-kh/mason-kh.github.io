@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mason's Profile</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .links a {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+        .links a:hover {
+            background-color: #2980b9;
+        }
+        .instructions {
+            margin-top: 30px;
+            text-align: left;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+        .instructions h2 {
+            color: #3498db;
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        .instructions p {
+            font-size: 1em;
+            color: #444;
+        }
+        .footer-note {
+            margin-top: 25px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 3px solid #3498db;
+        }
+        .project-section {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .project-box {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+        .contact-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: 8px;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .contact-form button:hover {
+            background-color: #2980b9;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .skill-tag {
+            background-color: #e1f0fa;
+            color: #3498db;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <img src="profile-image.jpg" alt="Mason's Profile Picture" class="profile-image"> -->
+        <h1>Mason</h1>
+        <p>Welcome to my profile</p>
+        
+        <div class="skills">
+            <span class="skill-tag">AI Development</span>
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Web Development</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">Healthcare Technology</span>
+        </div>
+
+        <div class="project-section">
+            <h2>My Latest Project: Talking Room</h2>
+            
+            <div class="project-box">
+                <h3>About Talking Room</h3>
+                <p>
+                    Talking Room is an AI therapist platform where artificial intelligence interacts with clients in a therapeutic context.
+                    The platform allows real therapists to observe sessions in real-time, including:
+                </p>
+                <ul>
+                    <li>Reading conversation transcripts</li>
+                    <li>Listening to live conversations</li>
+                    <li>Observing clients' overall mental health indicators</li>
+                    <li>Monitoring different emotional states throughout the session</li>
+                </ul>
+            </div>
+            
+            <div class="project-box">
+                <h3>Current Limitations & Future Improvements</h3>
+                <p>
+                    While the project shows promise, I acknowledge there are some limitations due to budget constraints and domain knowledge gaps.
+                    To transform this into a production-ready solution, I'm focused on:
+                </p>
+                <ol>
+                    <li><strong>Collaborating with professional therapists</strong> to refine the approach and ensure clinical validity</li>
+                    <li><strong>Seeking investment and donations</strong> to access better hardware resources and more advanced AI models</li>
+                    <li><strong>Customizing and fine-tuning models</strong> to improve conversation quality, therapeutic direction, and mental health assessments</li>
+                </ol>
+            </div>
+
+            <div class="links">
+                <a href="https://client.localhost" target="_blank" rel="noopener">Try Talking Room</a>
+            </div>
+             <p class="footer-note">
+                (You can also use <code>client.masonhere.com</code> if configured with HTTPS)
+            </p>
+
+            <div class="instructions">
+                <h2>How to Use:</h2>
+                <p>
+                    You must <strong>login with your Google account</strong> to be able to continue.
+                </p>
+                <p>
+                    It's better to open both links (Client and Dashboard) first, and then log in on each.
+                </p>
+                <ol>
+                    <li>In the <strong>Client</strong> app, start a session. You can then talk with the AI therapist.</li>
+                    <li>In the <strong>Dashboard</strong>, you will see there is a room listed for the active session.</li>
+                    <li>You may join this room as a supervisor. As a supervisor, you will see how the AI interacts with the client, observe the client's emotional state, listen to the conversation, and you can close the conversation (which means you suspect something inappropriate is happening during the conversation) to see what happens.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Have Ideas to Improve This Project?</h2>
+            <p>I'm actively looking for feedback, collaboration opportunities, and innovative ideas to enhance Talking Room.</p>
+            <p>If you have suggestions, technical insights, or would like to contribute in any way, please reach out:</p>
+            
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your ideas or feedback on the Talking Room project"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        
+        <p class="footer-note">
+            &copy; 2025 Mason. All rights reserved.
+        </p>
+    </div>
+</body>
+</html>
